@@ -14,11 +14,11 @@ test: test/e2e
 
 .PHONY: test/e2e
 test/e2e: build compose/up/db
-	go test -count=1 ./e2e/...
+	gotest -count=1 ./e2e/...
 
 .PHONY: test/e2e/answer
 test/e2e/answer: build/answer compose/up/db
-	cd answer && go test -count=1 ./e2e/...
+	cd answer && gotest -count=1 ./e2e/...
 
 .PHONY: compose/up
 compose/up: compose/up/db
